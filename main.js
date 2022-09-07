@@ -4,8 +4,37 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+const likeButtons = document.getElementsByClassName("like-glyph");
+
+Array.from(likeButtons).forEach(function(heart){
+  heart.addEventListener('click', ()=>{
+    if (heart.textContent == EMPTY_HEART){
+      heart.classList.add("activated-heart")
+      heart.textContent = FULL_HEART;
+    }
+    else if (heart.textContent == FULL_HEART){
+      heart.classList.remove("activated-heart")
+      heart.textContent = EMPTY_HEART;
+    }
+})
+});
+
+// for (heart in likeButtons){
+//   console.log(heart)
+  
+  // })
 
 
+
+// addEventListener('click', function(){
+//   console.log("clicked like")
+// });
+
+// function emptyHeartClick(){
+// };
+
+// function fullHeartClick(){
+// };
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
